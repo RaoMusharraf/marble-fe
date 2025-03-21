@@ -105,6 +105,8 @@ export function AuthModal({ isOpen, onClose, onVerificationSuccess }: AuthModalP
         throw new Error('No access token received');
       }
 
+      localStorage.setItem('token', data.accessToken);
+
       console.log('Verification successful, access token received');
       toast({
         title: "Success",
